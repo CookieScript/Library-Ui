@@ -8,6 +8,7 @@ local MainTab = Window:CreateTab({Name = "Main", Icon = "rbxassetid://1686317534
 local SettingsTab = Window:CreateTab({Name = "Settings", Icon = "rbxassetid://16863267906"})
 
 local SilentAimSection = MainTab:Section({Name = "Silent Aim", Side = "Left"})
+local Test = MainTab:Section({Name = "Target", Side = "Left"})
 
 SilentAimSection:Toggle({
     Name = "Silent Aim Enabled",
@@ -16,14 +17,6 @@ SilentAimSection:Toggle({
         print("Silent Aim is", Value)
     end
 }):Keybind({Default = "Q"})
-
---[[:ColorPicker({
-    Name = "FOV Color",
-    Default = Color3.fromRGB(255, 255, 255),
-    Callback = function(Value)
-        print("Silent Aim Color Is Now", Value)
-    end
-})]]
 
 SilentAimSection:Dropdown({
     Name = "Predicition Type",
@@ -55,6 +48,113 @@ SilentAimSection:Slider({
         print("Prediction Amount iz", Value)
     end
 })
+
+
+Test:Toggle({
+    Name = "Aa",
+    Default = false,
+    Callback = function(Value)
+    end
+})
+
+Test:Toggle({
+    Name = "Aa",
+    Default = false,
+    Callback = function(Value)
+    end
+})
+
+Test:Toggle({
+    Name = "Aa",
+    Default = false,
+    Callback = function(Value)
+    end
+})
+
+Test:Toggle({
+    Name = "Aa",
+    Default = false,
+    Callback = function(Value)
+    end
+})
+
+Test:Toggle({
+    Name = "Aa",
+    Default = false,
+    Callback = function(Value)
+    end
+})
+
+Test:Toggle({
+    Name = "Aa",
+    Default = false,
+    Callback = function(Value)
+    end
+})
+
+Test:Toggle({
+    Name = "Aa",
+    Default = false,
+    Callback = function(Value)
+    end
+})
+
+Test:Toggle({
+    Name = "Aa",
+    Default = false,
+    Callback = function(Value)
+    end
+})
+
+Test:Toggle({
+    Name = "Aa",
+    Default = false,
+    Callback = function(Value)
+    end
+})
+
+Test:Toggle({
+    Name = "Aa",
+    Default = false,
+    Callback = function(Value)
+    end
+})
+
+Test:Toggle({
+    Name = "Aa",
+    Default = false,
+    Callback = function(Value)
+    end
+})
+
+Test:Toggle({
+    Name = "Aa",
+    Default = false,
+    Callback = function(Value)
+    end
+})
+
+Test:Toggle({
+    Name = "Aa",
+    Default = false,
+    Callback = function(Value)
+    end
+})
+
+Test:Toggle({
+    Name = "Aa",
+    Default = false,
+    Callback = function(Value)
+    end
+})
+
+Test:Toggle({
+    Name = "Aa",
+    Default = false,
+    Callback = function(Value)
+    end
+})
+
 
 local SettingsUI = SettingsTab:Section({Name = "UI"})
 --
