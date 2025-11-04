@@ -2,10 +2,10 @@
 
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/CookieScript/Mobile/refs/heads/main/UnknownLuckyHub-Ui"))()
 
-local Main = Library:Window({Name = "Example Menu", Side = "Center", CloseBind = Enum.KeyCode.LeftAlt, KeybindList = true, Watermark = true})
+local Window = Library:Window({Name = "Example Menu", Side = "Center", CloseBind = Enum.KeyCode.LeftAlt, KeybindList = true, Watermark = true})
 --
-local MainTab = Main:CreateTab({Name = "Main", Icon = "rbxassetid://16863175349"})
-local SettingsTab = Main:CreateTab({Name = "Settings", Icon = "rbxassetid://16863267906"})
+local MainTab = Window:CreateTab({Name = "Main", Icon = "rbxassetid://16863175349"})
+local SettingsTab = Window:CreateTab({Name = "Settings", Icon = "rbxassetid://16863267906"})
 
 local SilentAimSection = MainTab:Section({Name = "Silent Aim", Side = "Left"})
 
@@ -17,6 +17,14 @@ SilentAimSection:Toggle({
     end
 }):Keybind({Default = "Q"})
 
+SilentAimSection:ColorPicker({
+    Name = "FOV Color",
+    Default = Color3.fromRGB(255, 255, 255),
+    Callback = function(Value)
+        print("Silent Aim Color Is Now", Value)
+    end
+})
+
 SilentAimSection:Dropdown({
     Name = "Predicition Type",
     Content = {"Custom", "Auto"},
@@ -27,12 +35,32 @@ SilentAimSection:Dropdown({
 })
 
 SilentAimSection:Slider({
+    Name = "Radius",
+    Min = 0,
+    Max = 100,
+    Default = 100,
+    Decimal = 1,
+    Callback = function(Value)
+        print("Radius Is", Value)
+    end
+})
+
+SilentAimSection:Slider({
     Name = "Prediction Amount",
     Min = 0,
     Max = 0.2,
     Default = 0.135,
-    Decimal = 0.001
+    Decimal = 0.001,
     Callback = function(Value)
         print("Prediction Amount iz", Value)
     end
 })
+
+local SettingsUI = SettingsTab:Section({Name = "UI"})
+--
+local WatermarkToggle = SettingsUI:Toggle({Name = "Watermark", Callback = function() Window:WatermarkVisibility() end})
+local KeybindListToggle = SettingsUI:Toggle({Name = "Keybind List", Callback = function() Window:KeybindListVisibility() end})
+--
+Library:Init()
+--
+Library:Notify({"Loaded Example Menu", 3})
