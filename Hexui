@@ -4,6 +4,9 @@
 -- Original For Pc Only local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/Perfectionsthegoat/hexui/main/goated"))()
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/CookieScript/Mobile/refs/heads/main/Hexui"))()
 
+local ThemeManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/LionTheGreatRealFrFr/MobileLinoriaLib/main/addons/ThemeManager.lua"))()
+local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/LionTheGreatRealFrFr/MobileLinoriaLib/main/addons/SaveManager.lua"))()
+
 local Window = Library:CreateWindow({
     -- Set Center to true if you want the menu to appear in the center
     -- Set AutoShow to true if you want the menu to appear when it is created
