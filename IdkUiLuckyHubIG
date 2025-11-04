@@ -17,13 +17,13 @@ SilentAimSection:Toggle({
     end
 }):Keybind({Default = "Q"})
 
-SilentAimSection:ColorPicker({
+--[[:ColorPicker({
     Name = "FOV Color",
     Default = Color3.fromRGB(255, 255, 255),
     Callback = function(Value)
         print("Silent Aim Color Is Now", Value)
     end
-})
+})]]
 
 SilentAimSection:Dropdown({
     Name = "Predicition Type",
