@@ -1,0 +1,38 @@
+-- New example script written by dino
+
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/CookieScript/Mobile/refs/heads/main/UnknownLuckyHub-Ui"))()
+
+local Main = Library:Window({Name = "Example Menu", Side = "Center", CloseBind = Enum.KeyCode.LeftAlt, KeybindList = true, Watermark = true})
+--
+local MainTab = Main:CreateTab({Name = "Main", Icon = "rbxassetid://16863175349"})
+local SettingsTab = Main:CreateTab({Name = "Settings", Icon = "rbxassetid://16863267906"})
+
+local SilentAimSection = MainTab:Section({Name = "Silent Aim", Side = "Left"})
+
+SilentAimSection:Toggle({
+    Name = "Silent Aim Enabled",
+    Default = false,
+    Callback = function(Value)
+        print("Silent Aim is", Value)
+    end
+}):Keybind({Default = "Q"})
+
+SilentAimSection:Dropdown({
+    Name = "Predicition Type",
+    Content = {"Custom", "Auto"},
+    Default = "Custom",
+    Callback = function(Value)
+        print("Prediction Type Is Now", Value)
+    end
+})
+
+SilentAimSection:Slider({
+    Name = "Prediction Amount",
+    Min = 0,
+    Max = 0.2,
+    Default = 0.135,
+    Decimal = 0.001
+    Callback = function(Value)
+        print("Prediction Amount iz", Value)
+    end
+})
